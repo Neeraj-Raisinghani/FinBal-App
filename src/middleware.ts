@@ -4,7 +4,7 @@ import type { NextRequest } from "next/server";
 const SESSION_COOKIE = "better-auth.session_token";
 const publicRoutes = ["/login", "/forgot-password"];
 
-export default function proxy(request: NextRequest) {
+export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   if (publicRoutes.includes(pathname)) {
